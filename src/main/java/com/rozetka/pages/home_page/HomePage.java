@@ -20,4 +20,19 @@ public class HomePage extends BasePage {
         getHamburgerButton().click();
         return new LeftBarComponent(driver);
     }
+
+    public String getCookie() {
+        waitSeconds(1);
+        return driver.manage().getCookieNamed("login").getValue();
+    }
+
+    public WebElement getLogoutButton() {
+        waitForElementToBeClickable(HomePageLocators.LOGOUT_BUTTON.getPath());
+        return driver.findElement(HomePageLocators.LOGOUT_BUTTON.getPath());
+    }
+
+    public HomePage clickLogoutButton() {
+        getLogoutButton().click();
+        return this;
+    }
 }

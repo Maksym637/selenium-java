@@ -3,15 +3,9 @@ package com.rozetka;
 import com.rozetka.pages.home_page.HomePage;
 import com.rozetka.pages.home_page.LeftBarComponent;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class LanguageTest extends BaseTest {
-
-    @BeforeMethod
-    public void beforeTest() {
-        setDriver();
-    }
 
     @Test
     public void fromUkrainianToRussian() {

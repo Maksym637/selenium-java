@@ -1,5 +1,6 @@
-package com.rozetka;
+package com.rozetka.home_page_test;
 
+import com.rozetka.base_test.BaseTest;
 import com.rozetka.pages.home_page.HomePage;
 import com.rozetka.pages.home_page.LeftBarComponent;
 import org.testng.Assert;
@@ -24,5 +25,4 @@ public class LanguageTest extends BaseTest {
         Assert.assertEquals(leftBarSecondClick.getLanguageText(), "Язык");
         Assert.assertEquals(leftBarSecondClick.getCityText(), "Город");
     }
-
 }

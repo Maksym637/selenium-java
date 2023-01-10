@@ -21,8 +21,16 @@ public class HomePage extends BasePage {
         return new LeftBarComponent(driver);
     }
 
+    public WebElement getListGoods() {
+        waitForElementToAppear(HomePageLocators.LIST_GOODS.getPath());
+        return driver.findElement(HomePageLocators.LIST_GOODS.getPath());
+    }
+
+    public String getListGoodsText() {
+        return getListGoods().getText();
+    }
+
     public String getCookie() {
-        waitSeconds(1);
         return driver.manage().getCookieNamed("login").getValue();
     }
 

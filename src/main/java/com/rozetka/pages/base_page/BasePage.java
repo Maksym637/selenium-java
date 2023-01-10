@@ -1,6 +1,7 @@
 package com.rozetka.pages.base_page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,6 +31,9 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
+    /*
+    Only used for clever CAPTCHA verification !
+     */
     protected void waitSeconds(int seconds) {
         try {
             Thread.sleep(seconds * 1000L);

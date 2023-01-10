@@ -45,8 +45,8 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage clickLoginButtonConfirm(){
-        waitSeconds(1);
+    public LoginPage clickLoginButtonConfirm() {
+        waitSeconds(10);
         getLoginButton().click();
         return this;
     }

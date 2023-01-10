@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="C:/Users/Latitude 7270/IdeaProjects/selenium-java">
         <classes>
-            <class name="com.rozetka.LanguageTest"/>
+            <class name="com.rozetka.home_page_test.LanguageTest"/>
         </classes>
     </test>
 </suite>

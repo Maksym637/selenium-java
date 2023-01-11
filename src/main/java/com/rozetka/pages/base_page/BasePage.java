@@ -1,8 +1,9 @@
 package com.rozetka.pages.base_page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,10 +14,12 @@ import static com.rozetka.constants.Constant.TimeoutVariables.EXPLICIT_WAIT;
 public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Actions action;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+        action = new Actions(driver);
     }
 
     public void open(String url) {
@@ -29,6 +32,15 @@ public class BasePage {
 
     protected void waitForElementToBeClickable(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    protected void waitForElementsToAppear(By locator) {
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
+
+    protected WebElement waitForPageReload(By locator) {
+        waitForElementToAppear(locator);
+        return driver.findElement(locator);
     }
 
     /*

@@ -5,6 +5,10 @@ import com.rozetka.pages.base_page.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
@@ -28,6 +32,21 @@ public class HomePage extends BasePage {
 
     public String getListGoodsText() {
         return getListGoods().getText();
+    }
+
+    public List<WebElement> getViewedProducts() {
+        waitForElementsToAppear(HomePageLocators.VIEWED_PRODUCT.getPath());
+        return driver.findElements(HomePageLocators.VIEWED_PRODUCT.getPath());
+    }
+
+    public List<String> getViewedProductsList() {
+        List<String> viewedProducts;
+        viewedProducts = getViewedProducts()
+                .stream()
+                .map(WebElement::getText)
+                .collect(Collectors.toList());
+        Collections.reverse(viewedProducts);
+        return viewedProducts;
     }
 
     public String getCookie() {

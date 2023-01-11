@@ -45,11 +45,6 @@ public class PersonalComponent extends BasePage {
         return this;
     }
 
-    public WebElement getMiddleNameForReload() {
-        waitForElementToAppear(PersonalDataLocators.MIDDLE_NAME.getPath());
-        return driver.findElement(PersonalDataLocators.MIDDLE_NAME.getPath());
-    }
-
     public WebElement getSaveButton() {
         waitForElementToBeClickable(PersonalDataLocators.SAVE_BUTTON.getPath());
         return driver.findElement(PersonalDataLocators.SAVE_BUTTON.getPath());
@@ -57,7 +52,7 @@ public class PersonalComponent extends BasePage {
 
     public PersonalComponent clickSaveButton() {
         getSaveButton().click();
-        getMiddleNameForReload();
+        waitForPageReload(PersonalDataLocators.RELOAD_FIELD.getPath());
         return this;
     }
 }

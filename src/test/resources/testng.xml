@@ -4,6 +4,10 @@
     <test name="C:/Users/Latitude 7270/IdeaProjects/selenium-java">
         <classes>
             <class name="com.rozetka.home_page_test.LanguageTest"/>
+            <class name="com.rozetka.home_page_test.LogoutTest"/>
+            <class name="com.rozetka.product_list_page_test.ProductListTest"/>
+            <class name="com.rozetka.product_page_test.ProductTest"/>
+            <class name="com.rozetka.profile_page_test.ProfileTest"/>
         </classes>
     </test>
 </suite>

@@ -57,7 +57,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clickCaptchaButton() {
-        getCaptchaButton().click();
+        action.doubleClick(getCaptchaButton()).perform();
         return this;
     }
 }

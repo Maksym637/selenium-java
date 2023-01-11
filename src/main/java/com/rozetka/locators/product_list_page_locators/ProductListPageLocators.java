@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 public enum ProductListPageLocators {
 
     PRODUCTS(By.xpath("//a[@class='goods-tile__picture ng-star-inserted']")),
-    PRODUCTS_TITLE(By.xpath("//h1[@class='catalog-heading ng-star-inserted']")),
     RELOAD_FIELD(By.xpath("//span[@class='sidebar-block__toggle-title'][1]"));
 
     private final By path;

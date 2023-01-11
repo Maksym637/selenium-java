@@ -10,6 +10,9 @@ import static com.rozetka.constants.Constant.Urls.NOTEBOOKS_PAGE;
 
 public class ProductTest extends LoginPreconditionTest {
 
+    private static final int PRODUCT_NUMBER = 0;
+    private static final String COMMENT_TO_LEAVE = "Якісний товар !";
+
     @Test
     public void leaveFeedbackValid() {
         ProductListPage productListPage = new ProductListPage(driver);
@@ -17,15 +20,12 @@ public class ProductTest extends LoginPreconditionTest {
 
         FeedbackComponent productFeedback;
 
-        int productNumber = 0;
-        String comment = "Якісний товар !";
-
         productFeedback = productListPage
-                .clickProduct(productNumber)
+                .clickProduct(PRODUCT_NUMBER)
                 .clickFeedbacks()
                 .clickWriteFeedback()
                 .clickStarRating()
-                .enterComment(comment)
+                .enterComment(COMMENT_TO_LEAVE)
                 .clickLeaveFeedback();
 
         Assert.assertEquals(productFeedback.getThankFiledText(), "Дякуємо!");

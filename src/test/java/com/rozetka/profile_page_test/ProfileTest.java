@@ -10,6 +10,9 @@ import static com.rozetka.constants.Constant.Urls.PROFILE_PAGE;
 
 public class ProfileTest extends LoginPreconditionTest {
 
+    private static final String NEW_FIRST_NAME = "НовіДані";
+    private static final String NEW_LAST_NAME = "НовіДані";
+
     @Test
     public void updateProfileValid() {
         ProfilePage profilePage = new ProfilePage(driver);
@@ -20,17 +23,15 @@ public class ProfileTest extends LoginPreconditionTest {
         String oldFirstName = profilePage.getUserNamesText()[0],
                 oldLastName = profilePage.getUserNamesText()[1];
 
-        String newFirstName = "НовіДані", newLastName = "НовіДані";
-
         renewalPage = profilePage
                 .clickProfileSection()
                 .clickEditButton()
-                .enterFirstName(newFirstName)
-                .enterLastName(newLastName)
+                .enterFirstName(NEW_FIRST_NAME)
+                .enterLastName(NEW_LAST_NAME)
                 .clickSaveButton();
 
-        Assert.assertEquals(profilePage.getUserNamesText()[0], newFirstName);
-        Assert.assertEquals(profilePage.getUserNamesText()[1], newLastName);
+        Assert.assertEquals(profilePage.getUserNamesText()[0], NEW_FIRST_NAME);
+        Assert.assertEquals(profilePage.getUserNamesText()[1], NEW_LAST_NAME);
 
         renewalPage
                 .clickEditButton()

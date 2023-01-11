@@ -14,15 +14,6 @@ public class ProductListPage extends BasePage {
         super(driver);
     }
 
-    public WebElement getProductsTitle() {
-        waitForElementToAppear(ProductListPageLocators.PRODUCTS_TITLE.getPath());
-        return driver.findElement(ProductListPageLocators.PRODUCTS_TITLE.getPath());
-    }
-
-    public String getProductsTitleText() {
-        return getProductsTitle().getText();
-    }
-
     public List<WebElement> getProducts() {
         waitForElementsToAppear(ProductListPageLocators.PRODUCTS.getPath());
         return driver.findElements(ProductListPageLocators.PRODUCTS.getPath());

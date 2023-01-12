@@ -51,7 +51,7 @@ public class LoginPage extends BasePage {
 
     @Step("Click the login button.")
     public LoginPage clickLoginButtonConfirm() {
-        waitSeconds(30);
+        waitSeconds(10);
         getLoginButton().click();
         return this;
     }

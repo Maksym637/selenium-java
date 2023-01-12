@@ -3,6 +3,10 @@ package com.rozetka.profile_page_test;
 import com.rozetka.pages.profile_page.PersonalComponent;
 import com.rozetka.pages.profile_page.ProfilePage;
 import com.rozetka.precondition_test.LoginPreconditionTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,6 +18,10 @@ public class ProfileTest extends LoginPreconditionTest {
     private static final String NEW_LAST_NAME = "НовіДані";
 
     @Test
+    @Issue("27")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("We need to verify the functionality of updating the user's" +
+                 "\npersonal data using valid data.")
     public void updateProfileValid() {
         ProfilePage profilePage = new ProfilePage(driver);
         profilePage.open(PROFILE_PAGE);

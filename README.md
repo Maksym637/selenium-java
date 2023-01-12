@@ -16,7 +16,7 @@ mvn -Dtest=LanguageTest test
 ```
 - Generate report :
 ```text
-allure serve allure-results
+allure serve target/allure-results
 ```
 - - -
 `(*)` — class name tests you can find in the **testng.xml** file.

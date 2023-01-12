@@ -2,6 +2,7 @@ package com.rozetka.pages.home_page;
 
 import com.rozetka.locators.home_page_locators.HomePageLocators;
 import com.rozetka.pages.base_page.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -20,6 +21,7 @@ public class HomePage extends BasePage {
         return driver.findElement(HomePageLocators.HAMBURGER_BUTTON.getPath());
     }
 
+    @Step("Move to the left top hamburger button and click on it.")
     public LeftBarComponent clickHamburgerButton() {
         getHamburgerButton().click();
         return new LeftBarComponent(driver);
@@ -39,6 +41,7 @@ public class HomePage extends BasePage {
         return driver.findElements(HomePageLocators.VIEWED_PRODUCT.getPath());
     }
 
+    @Step("Get viewed products collection.")
     public List<String> getViewedProductsList() {
         List<String> viewedProducts;
         viewedProducts = getViewedProducts()
@@ -58,6 +61,8 @@ public class HomePage extends BasePage {
         return driver.findElement(HomePageLocators.LOGOUT_BUTTON.getPath());
     }
 
+    @Step("Scroll down and on the left side, navigate" +
+          "\to the 'Вихід' button and click on it.")
     public HomePage clickLogoutButton() {
         getLogoutButton().click();
         return this;

@@ -10,7 +10,7 @@ import static com.rozetka.credentials.PrivateInformation.Credentials.PASSWORD;
 
 public class LoginPreconditionTest extends BaseTest {
 
-    @BeforeMethod
+    @BeforeMethod(description = "Precondition method : login into your account.")
     public void loginIntoAccount() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open(LOGIN_PAGE);

@@ -2,6 +2,7 @@ package com.rozetka.pages.login_page;
 
 import com.rozetka.locators.login_page_locators.LoginPageLocators;
 import com.rozetka.pages.base_page.BasePage;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -16,6 +17,7 @@ public class LoginPage extends BasePage {
         return driver.findElement(LoginPageLocators.EMAIL.getPath());
     }
 
+    @Step("Enter your email address.")
     public LoginPage enterEmail(String email) {
         getEmail().click();
         getEmail().clear();
@@ -28,6 +30,7 @@ public class LoginPage extends BasePage {
         return driver.findElement(LoginPageLocators.PASSWORD.getPath());
     }
 
+    @Step("Enter your password.")
     public LoginPage enterPassword(String password) {
         getPassword().click();
         getPassword().clear();
@@ -40,13 +43,15 @@ public class LoginPage extends BasePage {
         return driver.findElement(LoginPageLocators.SUBMIT_BUTTON.getPath());
     }
 
+    @Step("Click the login button.")
     public LoginPage clickLoginButton() {
         getLoginButton().click();
         return this;
     }
 
+    @Step("Click the login button.")
     public LoginPage clickLoginButtonConfirm() {
-        waitSeconds(10);
+        waitSeconds(30);
         getLoginButton().click();
         return this;
     }
@@ -56,6 +61,7 @@ public class LoginPage extends BasePage {
         return driver.findElement(LoginPageLocators.CAPTCHA_BUTTON.getPath());
     }
 
+    @Step("Click the captcha button (Check for robot).")
     public LoginPage clickCaptchaButton() {
         action.doubleClick(getCaptchaButton()).perform();
         return this;

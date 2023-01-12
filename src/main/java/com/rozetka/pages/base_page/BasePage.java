@@ -45,6 +45,7 @@ public class BasePage {
 
     /*
     Only used for clever CAPTCHA verification !
+    You know that I hate CAPTCHA !
      */
     protected void waitSeconds(int seconds) {
         try {
